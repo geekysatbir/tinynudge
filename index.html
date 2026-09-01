@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TinyNudge — Free Online Mouse Jiggler (Keep Screen Awake)</title>
+    <meta
+      name="description"
+      content="Free online mouse jiggler. Keep your computer screen awake from the browser — no install, no admin rights. TinyNudge for Mac moves the real pointer when you need Slack or Teams idle reset."
+    />
+    <link rel="canonical" href="https://mousejiggle.app/" />
+    <meta name="theme-color" content="#07080C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mousejiggle.app/" />
+    <meta property="og:title" content="TinyNudge — Free Online Mouse Jiggler" />
+    <meta
+      property="og:description"
+      content="Keep your screen awake in the browser. No install. Honest about what a webpage can and cannot do."
+    />
+    <meta property="og:image" content="https://mousejiggle.app/assets/favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./assets/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;650&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "TinyNudge",
+            "url": "https://mousejiggle.app/",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "description": "Free online mouse jiggler that keeps the display awake using the Screen Wake Lock API. Does not move the system cursor."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does this online mouse jiggler move my real mouse?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A website cannot move the operating-system pointer. TinyNudge’s browser tool keeps the screen from sleeping. The Mac app (when available) performs a tiny real mouse nudge."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will this keep Slack or Microsoft Teams green?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The website keeps the display awake. Desktop Slack and Teams watch input idle, so they may still go away. Use TinyNudge for Mac for a real pointer nudge, or a USB mouse jiggler."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to install anything?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The online mouse jiggler runs in Chrome, Edge, Safari, or Firefox. Click Start and leave the tab open."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is TinyNudge free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The website is free. A small one-time Mac app is planned after local testing."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="nav">
+        <a class="brand" href="./">
+          <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M18 16l22 14-10 2 6 14-6 3-6-14-6 9V16z" fill="#5CFFC1" />
+          </svg>
+          TinyNudge
+        </a>
+        <span class="chip" aria-disabled="true">Mac app — testing</span>
+      </header>
+
+      <section class="hero">
+        <h1>Keep the screen <em>awake</em></h1>
+        <p class="lede">
+          Free <strong>online mouse jiggler</strong> and mouse mover — no install, no admin rights.
+          This tab keeps your display from sleeping. It does <em>not</em> move your real pointer.
+        </p>
+      </section>
+
+      <section class="deck" aria-label="Mouse jiggler controls">
+        <div class="session-label">Session duration</div>
+        <time id="timer" class="timer" datetime="PT0S">00:00:00</time>
+        <div class="desk">
+          <canvas id="path" aria-hidden="true"></canvas>
+        </div>
+        <p class="desk-caption">Preview only — your system mouse stays put.</p>
+        <button id="start" class="start" type="button" aria-pressed="false">START</button>
+        <div class="controls">
+          <label>
+            Auto-stop at
+            <input id="stop-at" type="time" />
+          </label>
+          <label>
+            Scheduler
+            <input id="auto-stop" class="switch" type="checkbox" />
+          </label>
+        </div>
+        <div class="lamps">
+          <div class="lamp" id="lamp-wake"><span class="dot"></span> Wake lock</div>
+          <div class="lamp" id="lamp-audio"><span class="dot"></span> Audio</div>
+          <div class="lamp" id="lamp-pip"><span class="dot"></span> PiP</div>
+        </div>
+        <p class="safe">100% in-browser. No download. No account.</p>
+        <p class="safe"><button id="pip-btn" class="chip" type="button">Enable background (PiP)</button></p>
+      </section>
+
+      <div class="split">
+        <article class="card">
+          <h2>This website</h2>
+          <p>
+            An online mouse jiggler that uses the Screen Wake Lock API (and a silent audio fallback)
+            so your monitor does not dim while you read, present, or wait on a download. Works on
+            Windows, Mac, Linux, and Chromebooks as long as the browser tab stays available.
+          </p>
+        </article>
+        <article class="card">
+          <h2>TinyNudge for Mac</h2>
+          <p>
+            A menu-bar app that performs a tiny real mouse nudge — the same idea as a USB dongle,
+            without another gadget or dying battery. Needed if desktop Slack or Teams still go idle.
+            Local testing now; public download after it is proven.
+          </p>
+        </article>
+      </div>
+
+      <section class="section" id="how">
+        <h2>How to keep your computer awake in 3 steps</h2>
+        <ol class="steps">
+          <li>
+            <strong>01 — Open this page</strong>
+            Use Chrome, Edge, Safari, or Firefox. No extension and no admin password.
+          </li>
+          <li>
+            <strong>02 — Press Start</strong>
+            TinyNudge requests a screen wake lock. The lamps show which APIs actually engaged.
+          </li>
+          <li>
+            <strong>03 — Leave the tab</strong>
+            Keep the window restored, or use background PiP so the lock can survive a tab switch.
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="what">
+        <h2>What is an online mouse jiggler?</h2>
+        <p>
+          A mouse jiggler is anything that stops a computer from thinking you walked away: screen
+          sleep, a lock screen, or a chat status flipping to Away. Hardware jigglers are USB
+          dongles. Software jigglers are Mac or Windows apps. An <strong>online mouse jiggler</strong>
+          is a webpage — the fastest option when you cannot install software.
+        </p>
+        <p>
+          Browsers are sandboxed. They can ask the operating system to keep the <em>display</em> on
+          (the same idea as a YouTube tab). They cannot inject operating-system mouse events. If
+          someone promises a website will move your cursor or keep desktop Slack green, that claim
+          is stronger than the web platform allows. TinyNudge tells you the split up front.
+        </p>
+      </section>
+
+      <section class="section" id="compare">
+        <h2>Website vs USB dongle vs Mac app</h2>
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Need</th>
+              <th>TinyNudge website</th>
+              <th>USB mouse jiggler</th>
+              <th>TinyNudge for Mac</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Keep screen from sleeping</td>
+              <td>Yes (wake lock)</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Move the real pointer</td>
+              <td>No</td>
+              <td>Yes</td>
+              <td>Yes (tiny nudge)</td>
+            </tr>
+            <tr>
+              <td>Install / extra hardware</td>
+              <td>None</td>
+              <td>Dongle + port / battery</td>
+              <td>Menu-bar app</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>Reading, presentations, downloads</td>
+              <td>Managed PCs</td>
+              <td>Mac + desktop Slack/Teams idle</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section faq" id="faq">
+        <h2>Frequently asked questions</h2>
+        <details open>
+          <summary>Does this online mouse jiggler move my real mouse?</summary>
+          <p>
+            No. The glowing cursor on the card is a preview. Your system pointer does not move.
+            That is a browser security rule, not a missing feature.
+          </p>
+        </details>
+        <details>
+          <summary>Will Slack or Microsoft Teams stay green?</summary>
+          <p>
+            Desktop apps watch keyboard and mouse idle, not whether a tab holds a wake lock. This
+            page keeps the screen awake. For status idle, use TinyNudge for Mac or a hardware
+            jiggler.
+          </p>
+        </details>
+        <details>
+          <summary>Do I need admin rights?</summary>
+          <p>No. If you can open a website, you can run this mouse mover.</p>
+        </details>
+        <details>
+          <summary>Does it work on Mac, Windows, and Chromebook?</summary>
+          <p>
+            Yes, in a modern browser. Wake Lock is most reliable in Chrome and Edge. Safari 16.4+
+            and recent Firefox are supported; the silent-audio fallback covers older gaps.
+          </p>
+        </details>
+        <details>
+          <summary>Is my data collected?</summary>
+          <p>
+            The jiggler runs locally in your browser. See the
+            <a href="./privacy.html">privacy policy</a>. No account is required.
+          </p>
+        </details>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 TinyNudge · mousejiggle.app</span>
+        <span><a href="./privacy.html">Privacy</a> · Free online mouse jiggler</span>
+      </footer>
+    </div>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
