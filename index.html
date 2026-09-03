@@ -17,9 +17,16 @@
       property="og:description"
       content="Keep your screen awake in the browser. No install. Honest about what a webpage can and cannot do."
     />
-    <meta property="og:image" content="https://mousejiggle.app/assets/favicon.svg" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://mousejiggle.app/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TinyNudge — Free Online Mouse Jiggler" />
+    <meta name="twitter:description" content="Keep your screen awake in the browser. No install. Mac app for a real pointer nudge." />
+    <meta name="twitter:image" content="https://mousejiggle.app/assets/og.png" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./assets/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,6 +49,16 @@
             "description": "Free online mouse jiggler that keeps the display awake using the Screen Wake Lock API. Does not move the system cursor."
           },
           {
+            "@type": "SoftwareApplication",
+            "name": "TinyNudge for Mac",
+            "url": "https://mousejiggle.app/#mac",
+            "downloadUrl": "https://github.com/geekysatbir/tinynudge/releases/latest/download/TinyNudge.dmg",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "macOS 13+",
+            "offers": { "@type": "Offer", "price": "2.99", "priceCurrency": "USD" },
+            "description": "Menu-bar mouse jiggler for Mac. Nudges the real pointer 3 pixels and back every 60 seconds."
+          },
+          {
             "@type": "FAQPage",
             "mainEntity": [
               {
@@ -49,7 +66,7 @@
                 "name": "Does this online mouse jiggler move my real mouse?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. A website cannot move the operating-system pointer. TinyNudge’s browser tool keeps the screen from sleeping. The Mac app (when available) performs a tiny real mouse nudge."
+                  "text": "No. A website cannot move the operating-system pointer. TinyNudge’s browser tool keeps the screen from sleeping. TinyNudge for Mac performs a tiny real mouse nudge."
                 }
               },
               {
@@ -73,7 +90,7 @@
                 "name": "Is TinyNudge free?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The website is free. A small one-time Mac app is planned after local testing."
+                  "text": "The website is free. TinyNudge for Mac is $2.99 per year (Intel and Apple Silicon)."
                 }
               }
             ]
@@ -92,7 +109,7 @@
           </svg>
           TinyNudge
         </a>
-        <span class="chip" aria-disabled="true">Mac app — testing</span>
+        <a class="chip chip-link" href="#mac">Mac app $2.99/year</a>
       </header>
 
       <section class="hero">
@@ -144,10 +161,41 @@
           <p>
             A menu-bar app that performs a tiny real mouse nudge — the same idea as a USB dongle,
             without another gadget or dying battery. Needed if desktop Slack or Teams still go idle.
-            Local testing now; public download after it is proven.
+            <a href="#mac">$2.99/year for Mac</a> — Intel and Apple Silicon.
           </p>
         </article>
       </div>
+
+      <section class="section" id="mac">
+        <h2>TinyNudge for Mac — $2.99/year</h2>
+        <p>
+          The website is a free online mouse jiggler for the <em>display</em>. The Mac app nudges the
+          <em>real pointer</em> 3 pixels and back, every 60 seconds. One build for
+          <strong>Apple Silicon and Intel</strong>. macOS 13 or later.
+        </p>
+        <p>
+          <a id="buy-mac" class="chip chip-link" href="https://github.com/geekysatbir/tinynudge/releases/latest/download/TinyNudge.dmg">Download TinyNudge.dmg</a>
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>01 — Open the disk image</strong>
+            Drag TinyNudge to Applications. If macOS says the developer cannot be verified,
+            right-click the app → Open → Open.
+          </li>
+          <li>
+            <strong>02 — Allow Accessibility</strong>
+            System Settings → Privacy &amp; Security → Accessibility → enable TinyNudge, then click Start.
+          </li>
+          <li>
+            <strong>03 — Look for ▵ in the menu bar</strong>
+            Start / Stop from the window or the menu-bar icon. It pauses a cycle if you move the mouse yourself.
+          </li>
+        </ol>
+        <p class="desk-caption">
+          Paid checkout is one Polar or Lemon Squeezy URL in <code>assets/buy.js</code>. Until that
+          URL is set, this is the direct disk image. Unsigned build: right-click Open if Gatekeeper warns.
+        </p>
+      </section>
 
       <section class="section" id="how">
         <h2>How to keep your computer awake in 3 steps</h2>
@@ -236,7 +284,7 @@
           <summary>Will Slack or Microsoft Teams stay green?</summary>
           <p>
             Desktop apps watch keyboard and mouse idle, not whether a tab holds a wake lock. This
-            page keeps the screen awake. For status idle, use TinyNudge for Mac or a hardware
+            page keeps the screen awake. For status idle, download TinyNudge for Mac or use a hardware
             jiggler.
           </p>
         </details>
@@ -252,6 +300,13 @@
           </p>
         </details>
         <details>
+          <summary>Is TinyNudge free?</summary>
+          <p>
+            The website is free. TinyNudge for Mac is $2.99 per year. One download runs on Apple
+            Silicon and Intel Macs.
+          </p>
+        </details>
+        <details>
           <summary>Is my data collected?</summary>
           <p>
             The jiggler runs locally in your browser. See the
@@ -262,9 +317,10 @@
 
       <footer class="footer">
         <span>© 2026 TinyNudge · mousejiggle.app</span>
-        <span><a href="./privacy.html">Privacy</a> · Free online mouse jiggler</span>
+        <span><a href="./privacy.html">Privacy</a> · <a href="#mac">Mac app</a> · Free online mouse jiggler</span>
       </footer>
     </div>
     <script src="./assets/app.js"></script>
+    <script src="./assets/buy.js"></script>
   </body>
 </html>

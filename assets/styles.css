@@ -87,9 +87,8 @@ body {
   text-decoration: none;
 }
 
-.chip[aria-disabled="true"] {
-  opacity: 0.7;
-  cursor: default;
+.chip-link:hover {
+  background: rgba(92, 255, 193, 0.22);
 }
 
 .hero {

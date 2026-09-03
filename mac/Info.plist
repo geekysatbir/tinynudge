@@ -16,6 +16,8 @@
   <string>TinyNudge</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
+  <key>CFBundleIconFile</key>
+  <string>TinyNudge</string>
   <key>LSMinimumSystemVersion</key>
   <string>13.0</string>
   <key>LSUIElement</key>
@@ -24,5 +26,9 @@
   <true/>
   <key>NSHumanReadableCopyright</key>
   <string>Copyright 2026 TinyNudge</string>
+  <key>NSAccessibilityUsageDescription</key>
+  <string>TinyNudge needs Accessibility so it can nudge the pointer a few pixels and keep the Mac from thinking you walked away.</string>
+  <key>NSInputMonitoringUsageDescription</key>
+  <string>TinyNudge posts a tiny mouse-move event every minute. It does not read your keystrokes or screen.</string>
 </dict>
 </plist>

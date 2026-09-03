@@ -1,5 +1,6 @@
 .DS_Store
 mac/.build/
+mac/TinyNudge.iconset/
 dist/
 *.dmg
 *.app/
