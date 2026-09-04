@@ -1,12 +1,9 @@
-// Direct download for the free Mac app.
-window.TINY_NUDGE_DOWNLOAD_URL = "./downloads/TinyNudge.dmg";
-
+// Left in place so a cached page that still loads this file does not send
+// people to the contact form. New pages do not include this script.
 (function () {
-  const url = (window.TINY_NUDGE_DOWNLOAD_URL || "").trim() || "./downloads/TinyNudge.dmg";
-
+  const url = "/downloads/TinyNudge.dmg";
   document.querySelectorAll("[data-buy-mac]").forEach(function (el) {
     el.href = url;
     el.removeAttribute("download");
-    if (el.dataset.buyLabel !== "keep") el.textContent = "Download for Mac — free";
   });
 })();
