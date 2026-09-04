@@ -551,8 +551,24 @@ input[type="time"] {
   overflow: hidden;
 }
 
-.form-card .btn {
-  justify-self: start;
+.form-status {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.95rem;
+  min-height: 1.4em;
+}
+
+.form-status.pending,
+.form-status.warn {
+  color: var(--accent);
+}
+
+.form-status.ok {
+  color: var(--ok);
+}
+
+.form-status.err {
+  color: #9a1f2b;
 }
 
 @media (max-width: 860px) {
