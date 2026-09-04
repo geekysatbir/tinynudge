@@ -9,6 +9,8 @@
   --accent: #9a4a28;
   --white: #fffcf7;
   --ok: #2f6b4f;
+  --link: #8b3a1f;
+  --link-hover: #5c2412;
   --radius: 10px;
   --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
@@ -23,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+  background: var(--paper);
 }
 
 body {
@@ -34,12 +38,16 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: var(--navy);
+a:link,
+a:visited {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-a:hover {
-  color: var(--accent);
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
 }
 
 .wrap {
@@ -56,11 +64,13 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
-.brand {
+.brand,
+.brand:link,
+.brand:visited {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: inherit;
+  color: var(--ink);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -77,17 +87,21 @@ a:hover {
   font-size: 0.95rem;
 }
 
-.nav-links a {
-  color: var(--muted);
+.nav-links a:link,
+.nav-links a:visited {
+  color: var(--ink);
   text-decoration: none;
 }
 
 .nav-links a:hover,
+.nav-links a:focus-visible,
 .nav-links a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--link);
 }
 
-.btn {
+.btn,
+a.btn:link,
+a.btn:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -103,17 +117,21 @@ a:hover {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+a.btn:hover {
   background: var(--navy-2);
   color: var(--white);
 }
 
-.btn-ghost {
+.btn-ghost,
+a.btn-ghost:link,
+a.btn-ghost:visited {
   background: transparent;
   color: var(--navy);
 }
 
-.btn-ghost:hover {
+.btn-ghost:hover,
+a.btn-ghost:hover {
   background: var(--paper-2);
   color: var(--navy);
 }
@@ -454,9 +472,11 @@ input[type="time"] {
   font-size: 0.9rem;
 }
 
-.footer a {
-  color: var(--navy);
-  text-decoration: none;
+.footer a:link,
+.footer a:visited {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 @media (max-width: 860px) {
