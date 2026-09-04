@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact — TinyNudge</title>
+    <title data-i18n="page.contact.title">Contact — TinyNudge</title>
     <meta
       name="description"
+      data-i18n-content="page.contact.desc"
       content="Contact TinyNudge about the online mouse jiggler or the Mac menu-bar app. We reply through the form — no public email address."
     />
     <link rel="canonical" href="https://mousejiggle.app/contact.html" />
@@ -16,7 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles.css?v=5" />
+    <link rel="stylesheet" href="./assets/styles.css?v=6" />
+    <script src="./assets/i18n.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -31,9 +33,9 @@
       </header>
 
       <section class="section contact-hero">
-        <p class="eyebrow">Contact</p>
-        <h2>Get in touch</h2>
-        <p>
+        <p class="eyebrow" data-i18n="nav.contact">Contact</p>
+        <h2 data-i18n="page.contact.h2">Get in touch</h2>
+        <p data-i18n="page.contact.lead">
           Questions, feedback, or Mac install help. Send the form and we will reply to the address
           you enter. Do not include passwords.
         </p>
@@ -41,27 +43,27 @@
 
       <section class="contact-layout">
         <aside class="card">
-          <h3>What we can help with</h3>
-          <p>The browser wake-lock tool, the free Mac app, and install questions.</p>
-          <h3>Mac app</h3>
-          <p>
+          <h3 data-i18n="page.contact.help.h">What we can help with</h3>
+          <p data-i18n="page.contact.help.p">The browser wake-lock tool, the free Mac app, and install questions.</p>
+          <h3 data-i18n="page.contact.mac.h">Mac app</h3>
+          <p data-i18n="page.contact.mac.p" data-i18n-html>
             The app is a free download on the
             <a href="./mac.html">Mac app page</a>. Use this form for install or Accessibility
             questions, not to request a payment link.
           </p>
-          <h3>Reply time</h3>
-          <p>We aim to answer within one or two days. There is no public inbox on this page.</p>
+          <h3 data-i18n="page.contact.time.h">Reply time</h3>
+          <p data-i18n="page.contact.time.p">We aim to answer within one or two days. There is no public inbox on this page.</p>
         </aside>
 
         <form id="contact-form" class="form-card" method="POST">
           <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
 
           <label>
-            Full name
+            <span data-i18n="page.contact.name">Full name</span>
             <input id="name" name="name" type="text" required maxlength="120" autocomplete="name" />
           </label>
           <label>
-            Email address
+            <span data-i18n="page.contact.email">Email address</span>
             <input
               id="email"
               name="email"
@@ -72,25 +74,25 @@
             />
           </label>
           <label>
-            Subject
+            <span data-i18n="page.contact.subject">Subject</span>
             <select id="subject" name="subject" required>
-              <option value="">Select one</option>
-              <option value="Technical support">Technical support</option>
-              <option value="Mac app help">Mac app help</option>
-              <option value="Feedback">Feedback</option>
-              <option value="Other">Other</option>
+              <option value="" data-i18n="page.contact.select">Select one</option>
+              <option value="Technical support" data-i18n="page.contact.opt.support">Technical support</option>
+              <option value="Mac app help" data-i18n="page.contact.opt.mac">Mac app help</option>
+              <option value="Feedback" data-i18n="page.contact.opt.feedback">Feedback</option>
+              <option value="Other" data-i18n="page.contact.opt.other">Other</option>
             </select>
           </label>
           <label>
-            Message
+            <span data-i18n="page.contact.message">Message</span>
             <textarea id="message" name="message" required maxlength="5000" rows="6"></textarea>
           </label>
           <label class="check">
             <input type="checkbox" name="privacy" value="yes" required />
-            <span>I agree to the <a href="./privacy.html">privacy policy</a>.</span>
+            <span data-i18n="page.contact.agree" data-i18n-html>I agree to the <a href="./privacy.html">privacy policy</a>.</span>
           </label>
           <p class="form-status" id="form-status" role="status"></p>
-          <button class="btn" type="submit">Send message</button>
+          <button class="btn" type="submit" data-i18n="page.contact.send">Send message</button>
         </form>
       </section>
 

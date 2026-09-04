@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Privacy — TinyNudge</title>
+    <title data-i18n="page.privacy.title">Privacy — TinyNudge</title>
     <meta name="description" content="TinyNudge privacy policy. The online mouse jiggler runs locally. We do not collect accounts or pointer data." />
     <link rel="canonical" href="https://mousejiggle.app/privacy.html" />
     <meta property="og:image" content="https://mousejiggle.app/assets/og.png" />
@@ -15,7 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles.css?v=4" />
+    <link rel="stylesheet" href="./assets/styles.css?v=6" />
+    <script src="./assets/i18n.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -28,17 +29,17 @@
         </nav>
       </header>
       <article class="prose">
-        <h1>Privacy policy</h1>
-        <p>
+        <h1 data-i18n="page.privacy.h1">Privacy policy</h1>
+        <p data-i18n="page.privacy.p1">
           TinyNudge’s online mouse jiggler runs in your browser using the Screen Wake Lock API,
           optional silent audio, and optional Picture-in-Picture. Session state never leaves your
           device. We do not require an account, and we do not record mouse coordinates, keystrokes,
           or screen contents.
         </p>
-        <p>
+        <p data-i18n="page.privacy.p2" data-i18n-html>
           Use the <a href="./contact.html">contact form</a> for questions. Do not send passwords.
         </p>
-        <p>
+        <p data-i18n="page.privacy.p3">
           This static site may be hosted on GitHub Pages or Cloudflare. Those providers see normal
           web logs (IP address, user agent) as with any website. The contact form is delivered by
           Formsubmit so we can receive messages without publishing an inbox on the page. Formsubmit
@@ -46,11 +47,11 @@
           analytics scripts on this version. TinyNudge is not a tool for bypassing employer
           monitoring or security software.
         </p>
-        <p>
+        <p data-i18n="page.privacy.p4" data-i18n-html>
           TinyNudge for Mac is a free download. See
           <a href="./mac.html">TinyNudge for Mac</a>.
         </p>
-        <p><a href="./">← Back to TinyNudge</a></p>
+        <p><a href="./" data-i18n="page.privacy.back">← Back to TinyNudge</a></p>
       </article>
       <footer class="footer">
         <span>© 2026 TinyNudge</span>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TinyNudge | Online Mouse Jiggler for Screen Wake and Presence</title>
+    <title data-i18n="meta.title">TinyNudge | Online Mouse Jiggler for Screen Wake and Presence</title>
     <meta
       name="description"
+      data-i18n-content="meta.description"
       content="Free online mouse jiggler and mouse mover in the browser. Keep your screen awake with no install. TinyNudge for Mac nudges the real pointer when Slack or Teams go idle."
     />
     <meta
@@ -38,7 +39,8 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles.css?v=4" />
+    <link rel="stylesheet" href="./assets/styles.css?v=6" />
+    <script src="./assets/i18n.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -123,18 +125,18 @@
 
       <section class="hero" id="tool">
         <div>
-          <p class="eyebrow">Free online mouse jiggler</p>
-          <h1>Keep the display awake. Be precise about presence.</h1>
-          <p class="lede">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Free online mouse jiggler</p>
+          <h1 data-i18n="hero.title">Keep the display awake. Be precise about presence.</h1>
+          <p class="lede" data-i18n="hero.lede" data-i18n-html>
             TinyNudge is a browser <strong>mouse jiggler</strong> and mouse mover for people who
             need the screen to stay on during reads, exports, and presentations — without installing
             software or asking IT for admin rights.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#tool">Use the browser tool</a>
-            <a class="btn btn-ghost" href="./downloads/TinyNudge.dmg">Download the Mac app — free</a>
+            <a class="btn" href="#tool" data-i18n="hero.useTool">Use the browser tool</a>
+            <a class="btn btn-ghost" href="./downloads/TinyNudge.dmg" data-i18n="hero.downloadMac">Download the Mac app — free</a>
           </div>
-          <p class="note">
+          <p class="note" data-i18n="hero.note" data-i18n-html>
             This page can keep the <em>monitor</em> from sleeping. It cannot move your system
             cursor. Desktop Slack, Microsoft Teams, Zoom, and Discord still watch real input idle.
             If you need the green status on those apps, use the Mac menu-bar app or a USB jiggler —
@@ -142,50 +144,50 @@
           </p>
         </div>
 
-        <aside class="console" aria-label="Online mouse jiggler controls">
+        <aside class="console" data-i18n-aria="tool.aria" aria-label="Online mouse jiggler controls">
           <div class="console-head">
-            <span>Browser session</span>
+            <span data-i18n="tool.session">Browser session</span>
             <time id="timer" class="timer" datetime="PT0S">00:00:00</time>
           </div>
           <div class="desk">
             <canvas id="path" aria-hidden="true"></canvas>
           </div>
-          <p class="desk-caption">Illustration only. Your operating-system pointer does not move.</p>
-          <button id="start" class="btn" type="button" aria-pressed="false">Keep screen awake</button>
+          <p class="desk-caption" data-i18n="tool.caption">Illustration only. Your operating-system pointer does not move.</p>
+          <button id="start" class="btn" type="button" aria-pressed="false" data-i18n="tool.start">Keep screen awake</button>
           <div class="controls">
             <label>
-              Stop at
+              <span data-i18n="tool.stopAt">Stop at</span>
               <input id="stop-at" type="time" />
             </label>
             <label>
-              Timed stop
+              <span data-i18n="tool.timed">Timed stop</span>
               <input id="auto-stop" type="checkbox" />
             </label>
           </div>
           <div class="lamps">
-            <div class="lamp" id="lamp-wake"><span class="dot"></span> Wake lock</div>
-            <div class="lamp" id="lamp-audio"><span class="dot"></span> Audio</div>
-            <div class="lamp" id="lamp-pip"><span class="dot"></span> PiP</div>
+            <div class="lamp" id="lamp-wake"><span class="dot"></span> <span data-i18n="tool.wake">Wake lock</span></div>
+            <div class="lamp" id="lamp-audio"><span class="dot"></span> <span data-i18n="tool.audio">Audio</span></div>
+            <div class="lamp" id="lamp-pip"><span class="dot"></span> <span data-i18n="tool.pip">PiP</span></div>
           </div>
-          <p class="safe">Runs locally in the tab. No account. No admin password.</p>
-          <p class="safe"><button id="pip-btn" class="btn btn-ghost" type="button">Keep awake in background (PiP)</button></p>
+          <p class="safe" data-i18n="tool.safe">Runs locally in the tab. No account. No admin password.</p>
+          <p class="safe"><button id="pip-btn" class="btn btn-ghost" type="button" data-i18n="tool.pipBtn">Keep awake in background (PiP)</button></p>
         </aside>
       </section>
 
       <section class="section">
-        <h2>Two tools, two jobs</h2>
+        <h2 data-i18n="two.title">Two tools, two jobs</h2>
         <div class="grid-2">
           <article class="card">
-            <h3>Online mouse jiggler</h3>
-            <p>
+            <h3 data-i18n="two.web.h">Online mouse jiggler</h3>
+            <p data-i18n="two.web.p">
               Uses the Screen Wake Lock API, with a quiet audio fallback, so the display does not
               dim while this tab is available. Works on Windows, macOS, Linux, and Chromebooks in a
               current Chrome, Edge, Safari, or Firefox window.
             </p>
           </article>
           <article class="card">
-            <h3>TinyNudge for Mac</h3>
-            <p>
+            <h3 data-i18n="two.mac.h">TinyNudge for Mac</h3>
+            <p data-i18n="two.mac.p">
               A menu-bar mouse jiggler that offsets the real pointer a few pixels and returns it.
               That is the same class of signal a USB mouse jiggler sends, without another dongle.
               Use it when desktop chat still flips to Away.
@@ -195,49 +197,48 @@
       </section>
 
       <section class="section" id="how">
-        <h2>How to keep your computer awake</h2>
+        <h2 data-i18n="how.title">How to keep your computer awake</h2>
         <ol class="steps">
           <li>
-            <strong>Open this page</strong>
-            No extension, installer, or administrator password. A normal browser tab is enough.
+            <strong data-i18n="how.1.h">Open this page</strong>
+            <span data-i18n="how.1.p">No extension, installer, or administrator password. A normal browser tab is enough.</span>
           </li>
           <li>
-            <strong>Start the session</strong>
-            TinyNudge requests a screen wake lock. The status lamps show which APIs actually ran.
+            <strong data-i18n="how.2.h">Start the session</strong>
+            <span data-i18n="how.2.p">TinyNudge requests a screen wake lock. The status lamps show which APIs actually ran.</span>
           </li>
           <li>
-            <strong>Leave the tab available</strong>
-            Keep the window restored, or use picture-in-picture so the lock can survive a tab switch.
+            <strong data-i18n="how.3.h">Leave the tab available</strong>
+            <span data-i18n="how.3.p">Keep the window restored, or use picture-in-picture so the lock can survive a tab switch.</span>
           </li>
         </ol>
       </section>
 
       <section class="section" id="mac">
-        <h2>TinyNudge for Mac — free download</h2>
-        <p>
+        <h2 data-i18n="mac.title">TinyNudge for Mac — free download</h2>
+        <p data-i18n="mac.lead" data-i18n-html>
           The website is an online mouse jiggler for the display. The Mac app nudges the
           <em>real pointer</em> three pixels and back, once a minute. One build for
           <strong>Apple Silicon and Intel</strong>. Requires macOS 13 or later.
         </p>
         <p>
-          <a id="buy-mac" class="btn" href="./downloads/TinyNudge.dmg">Download for Mac — free</a>
+          <a id="buy-mac" class="btn" href="./downloads/TinyNudge.dmg" data-i18n="mac.download">Download for Mac — free</a>
         </p>
         <ol class="steps">
           <li>
-            <strong>Install</strong>
-            Open the disk image and drag TinyNudge to Applications. If macOS says it could not
-            verify the app, click Done, then System Settings → Privacy &amp; Security → Open Anyway.
+            <strong data-i18n="mac.s1.h">Install</strong>
+            <span data-i18n="mac.s1.p" data-i18n-html>Open the disk image and drag TinyNudge to Applications. If macOS says it could not verify the app, click Done, then System Settings → Privacy &amp; Security → Open Anyway.</span>
           </li>
           <li>
-            <strong>Allow Accessibility</strong>
-            System Settings → Privacy &amp; Security → Accessibility → enable TinyNudge, then start it.
+            <strong data-i18n="mac.s2.h">Allow Accessibility</strong>
+            <span data-i18n="mac.s2.p">System Settings → Privacy &amp; Security → Accessibility → enable TinyNudge, then start it.</span>
           </li>
           <li>
-            <strong>Use the menu bar</strong>
-            Start and stop from the window or the status icon. A cycle is skipped if you move the mouse yourself.
+            <strong data-i18n="mac.s3.h">Use the menu bar</strong>
+            <span data-i18n="mac.s3.p">Start and stop from the window or the status icon. A cycle is skipped if you move the mouse yourself.</span>
           </li>
         </ol>
-        <p class="desk-caption">
+        <p class="desk-caption" data-i18n="mac.foot" data-i18n-html>
           Download the disk image from this page or the
           <a href="./mac.html">Mac app page</a>. Install questions go to
           <a href="./contact.html?topic=mac">contact</a>.
@@ -245,32 +246,32 @@
       </section>
 
       <section class="section" id="use-cases">
-        <h2>What this is for</h2>
-        <p>
+        <h2 data-i18n="use.title">What this is for</h2>
+        <p data-i18n="use.lead">
           People usually want one of three outcomes: the screen stays bright, a kiosk does not
           lock, or a chat status stays available. Those are different technical problems. TinyNudge
           labels them instead of mixing them into one promise.
         </p>
         <div class="grid-3">
           <article class="card">
-            <h3>Keep the screen awake</h3>
-            <p>
+            <h3 data-i18n="use.screen.h">Keep the screen awake</h3>
+            <p data-i18n="use.screen.p">
               Long PDFs, lecture videos, photo exports, and unattended downloads. The browser tool
               is built for this. It is the same idea as leaving a video tab open, with a dedicated
               wake lock.
             </p>
           </article>
           <article class="card">
-            <h3>Presentations and kiosks</h3>
-            <p>
+            <h3 data-i18n="use.kiosk.h">Presentations and kiosks</h3>
+            <p data-i18n="use.kiosk.p">
               Lobby displays and workshop machines often sleep on the default energy profile. A
               wake lock or a hardware jiggler keeps the panel on without changing system settings
               for every user.
             </p>
           </article>
           <article class="card">
-            <h3>Slack, Teams, and Zoom</h3>
-            <p>
+            <h3 data-i18n="use.chat.h">Slack, Teams, and Zoom</h3>
+            <p data-i18n="use.chat.p" data-i18n-html>
               Desktop clients treat “no keyboard or mouse” as idle. A website cannot reset that
               timer. Read the
               <a href="./guides/keep-slack-teams-status-green.html">status guide</a>
@@ -281,154 +282,154 @@
       </section>
 
       <section class="section" id="what">
-        <h2>What is a mouse jiggler?</h2>
-        <p>
+        <h2 data-i18n="what.title">What is a mouse jiggler?</h2>
+        <p data-i18n="what.p1" data-i18n-html>
           A mouse jiggler (also called a mouse mover) is any device or program that stops a computer
           from treating you as gone. The common symptoms are display sleep, a lock screen, a
           screensaver, or chat flipping from Available to Away. Hardware jigglers are USB sticks.
           Software jigglers are Mac or Windows apps. An <strong>online mouse jiggler</strong> is a
           webpage — the fastest option when you cannot install software.
         </p>
-        <p>
+        <p data-i18n="what.p2">
           Browsers are sandboxed. They can ask the operating system to keep the display on. They
           cannot synthesize HID mouse events. If a site claims it will move your cursor or keep
           desktop Slack green from a webpage alone, that claim is stronger than the web platform
           allows. TinyNudge states the split on the first screen.
         </p>
         <p>
-          <a class="more" href="./guides/what-is-a-mouse-jiggler.html">Full explainer →</a>
+          <a class="more" href="./guides/what-is-a-mouse-jiggler.html" data-i18n="what.more">Full explainer →</a>
         </p>
       </section>
 
       <section class="section" id="compare">
-        <h2>Website vs USB dongle vs Mac app</h2>
+        <h2 data-i18n="cmp.title">Website vs USB dongle vs Mac app</h2>
         <table class="compare">
           <thead>
             <tr>
-              <th>Need</th>
-              <th>TinyNudge website</th>
-              <th>USB mouse jiggler</th>
-              <th>TinyNudge for Mac</th>
+              <th data-i18n="cmp.need">Need</th>
+              <th data-i18n="cmp.web">TinyNudge website</th>
+              <th data-i18n="cmp.usb">USB mouse jiggler</th>
+              <th data-i18n="cmp.mac">TinyNudge for Mac</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Keep screen from sleeping</td>
-              <td>Yes (wake lock)</td>
-              <td>Yes</td>
-              <td>Yes</td>
+              <td data-i18n="cmp.r1c">Keep screen from sleeping</td>
+              <td data-i18n="cmp.r1w">Yes (wake lock)</td>
+              <td data-i18n="cmp.yes">Yes</td>
+              <td data-i18n="cmp.yes">Yes</td>
             </tr>
             <tr>
-              <td>Move the real pointer</td>
-              <td>No</td>
-              <td>Yes</td>
-              <td>Yes (small nudge)</td>
+              <td data-i18n="cmp.r2c">Move the real pointer</td>
+              <td data-i18n="cmp.no">No</td>
+              <td data-i18n="cmp.yes">Yes</td>
+              <td data-i18n="cmp.r2m">Yes (small nudge)</td>
             </tr>
             <tr>
-              <td>Install or extra hardware</td>
-              <td>None</td>
-              <td>Dongle, port, often a battery</td>
-              <td>Menu-bar app</td>
+              <td data-i18n="cmp.r3c">Install or extra hardware</td>
+              <td data-i18n="cmp.r3w">None</td>
+              <td data-i18n="cmp.r3u">Dongle, port, often a battery</td>
+              <td data-i18n="cmp.r3m">Menu-bar app</td>
             </tr>
             <tr>
-              <td>Admin rights</td>
-              <td>Not required</td>
-              <td>Usually not</td>
-              <td>Accessibility permission</td>
+              <td data-i18n="cmp.r4c">Admin rights</td>
+              <td data-i18n="cmp.r4w">Not required</td>
+              <td data-i18n="cmp.r4u">Usually not</td>
+              <td data-i18n="cmp.r4m">Accessibility permission</td>
             </tr>
             <tr>
-              <td>Best for</td>
-              <td>Reading, presentations, downloads</td>
-              <td>Managed PCs with a USB port</td>
-              <td>Mac plus desktop Slack or Teams idle</td>
+              <td data-i18n="cmp.r5c">Best for</td>
+              <td data-i18n="cmp.r5w">Reading, presentations, downloads</td>
+              <td data-i18n="cmp.r5u">Managed PCs with a USB port</td>
+              <td data-i18n="cmp.r5m">Mac plus desktop Slack or Teams idle</td>
             </tr>
           </tbody>
         </table>
         <p>
-          <a href="./guides/usb-vs-software-mouse-jiggler.html">Longer comparison of USB, software, and browser jigglers →</a>
+          <a href="./guides/usb-vs-software-mouse-jiggler.html" data-i18n="cmp.more">Longer comparison of USB, software, and browser jigglers →</a>
         </p>
       </section>
 
       <section class="section" id="guides">
-        <h2>Guides</h2>
-        <p>Explainers for screen wake, chat presence, and Mac setup.</p>
+        <h2 data-i18n="guides.title">Guides</h2>
+        <p data-i18n="guides.lead">Explainers for screen wake, chat presence, and Mac setup.</p>
         <div class="guides">
           <article class="card">
-            <h3>Online mouse jiggler</h3>
-            <p>What a webpage can do, which browsers work, and how to keep the tab from being throttled.</p>
-            <a class="more" href="./guides/online-mouse-jiggler.html">Read the guide →</a>
+            <h3 data-i18n="guides.g1.h">Online mouse jiggler</h3>
+            <p data-i18n="guides.g1.p">What a webpage can do, which browsers work, and how to keep the tab from being throttled.</p>
+            <a class="more" href="./guides/online-mouse-jiggler.html" data-i18n="guides.read">Read the guide →</a>
           </article>
           <article class="card">
-            <h3>Keep Slack or Teams from going Away</h3>
-            <p>Why presence is not the same as screen wake, and what actually resets idle on the desktop apps.</p>
-            <a class="more" href="./guides/keep-slack-teams-status-green.html">Read the guide →</a>
+            <h3 data-i18n="guides.g2.h">Keep Slack or Teams from going Away</h3>
+            <p data-i18n="guides.g2.p">Why presence is not the same as screen wake, and what actually resets idle on the desktop apps.</p>
+            <a class="more" href="./guides/keep-slack-teams-status-green.html" data-i18n="guides.read">Read the guide →</a>
           </article>
           <article class="card">
-            <h3>Mouse jiggler for Mac</h3>
-            <p>Menu-bar setup, Accessibility, clamshell limits, and how this differs from a USB stick.</p>
-            <a class="more" href="./guides/mouse-jiggler-for-mac.html">Read the guide →</a>
+            <h3 data-i18n="guides.g3.h">Mouse jiggler for Mac</h3>
+            <p data-i18n="guides.g3.p">Menu-bar setup, Accessibility, clamshell limits, and how this differs from a USB stick.</p>
+            <a class="more" href="./guides/mouse-jiggler-for-mac.html" data-i18n="guides.read">Read the guide →</a>
           </article>
           <article class="card">
-            <h3>What is a mouse jiggler?</h3>
-            <p>Definitions, legal and workplace notes, and the difference versus an auto clicker.</p>
-            <a class="more" href="./guides/what-is-a-mouse-jiggler.html">Read the guide →</a>
+            <h3 data-i18n="guides.g4.h">What is a mouse jiggler?</h3>
+            <p data-i18n="guides.g4.p">Definitions, legal and workplace notes, and the difference versus an auto clicker.</p>
+            <a class="more" href="./guides/what-is-a-mouse-jiggler.html" data-i18n="guides.read">Read the guide →</a>
           </article>
         </div>
       </section>
 
       <section class="section faq" id="faq">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
         <details open>
-          <summary>Does this online mouse jiggler move my real mouse?</summary>
-          <p>
+          <summary data-i18n="faq.q1">Does this online mouse jiggler move my real mouse?</summary>
+          <p data-i18n="faq.a1">
             No. The moving pointer on the card is a preview. Your system cursor stays put. That is a
             browser security rule, not a missing feature.
           </p>
         </details>
         <details>
-          <summary>Will Slack or Microsoft Teams stay green?</summary>
-          <p>
+          <summary data-i18n="faq.q2">Will Slack or Microsoft Teams stay green?</summary>
+          <p data-i18n="faq.a2">
             Desktop apps watch keyboard and mouse idle, not whether a tab holds a wake lock. This
             page keeps the screen awake. For status idle on a Mac, use TinyNudge for Mac or a
             hardware jiggler — and follow your employer’s policy.
           </p>
         </details>
         <details>
-          <summary>Do I need admin rights?</summary>
-          <p>No. If you can open a website, you can run the online mouse mover.</p>
+          <summary data-i18n="faq.q3">Do I need admin rights?</summary>
+          <p data-i18n="faq.a3">No. If you can open a website, you can run the online mouse mover.</p>
         </details>
         <details>
-          <summary>Does it work on Mac, Windows, and Chromebook?</summary>
-          <p>
+          <summary data-i18n="faq.q4">Does it work on Mac, Windows, and Chromebook?</summary>
+          <p data-i18n="faq.a4">
             Yes, in a modern browser. Wake Lock is most reliable in Chrome and Edge. Safari 16.4+
             and recent Firefox are supported; the silent-audio fallback covers older gaps.
           </p>
         </details>
         <details>
-          <summary>How do I get TinyNudge for Mac?</summary>
-          <p>
+          <summary data-i18n="faq.q5">How do I get TinyNudge for Mac?</summary>
+          <p data-i18n="faq.a5" data-i18n-html>
             Download the disk image from the
             <a href="./mac.html">Mac app page</a>. It is free. For install help, use
             <a href="./contact.html?topic=mac">contact</a>.
           </p>
         </details>
         <details>
-          <summary>Is TinyNudge free?</summary>
-          <p>
+          <summary data-i18n="faq.q6">Is TinyNudge free?</summary>
+          <p data-i18n="faq.a6">
             Yes. The website and TinyNudge for Mac are free. One download runs on Apple
             Silicon and Intel Macs.
           </p>
         </details>
         <details>
-          <summary>Is a mouse jiggler the same as an auto clicker?</summary>
-          <p>
+          <summary data-i18n="faq.q7">Is a mouse jiggler the same as an auto clicker?</summary>
+          <p data-i18n="faq.a7">
             No. A jiggler only concerns movement or wake. An auto clicker sends click events. TinyNudge
             does not click buttons or fill forms.
           </p>
         </details>
         <details>
-          <summary>Is my data collected?</summary>
-          <p>
+          <summary data-i18n="faq.q8">Is my data collected?</summary>
+          <p data-i18n="faq.a8" data-i18n-html>
             The jiggler runs locally in your browser. See the
             <a href="./privacy.html">privacy policy</a>. No account is required.
           </p>

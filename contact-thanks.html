@@ -13,7 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles.css?v=5" />
+    <link rel="stylesheet" href="./assets/styles.css?v=6" />
+    <script src="./assets/i18n.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -26,15 +27,15 @@
         </nav>
       </header>
       <article class="prose">
-        <p class="eyebrow">Contact</p>
-        <h1>Message sent</h1>
-        <p>
+        <p class="eyebrow" data-i18n="nav.contact">Contact</p>
+        <h1 data-i18n="page.thanks.h1">Message sent</h1>
+        <p data-i18n="page.thanks.p" data-i18n-html>
           If this was the first time the form was used, FormSubmit emails an <strong>Activate Form</strong>
           link to the site inbox. That message is often in Spam or Promotions. Click the link once,
           then send the form again. After activation, new messages are delivered normally.
         </p>
         <p>
-          <a class="btn" href="./">Back to TinyNudge</a>
+          <a class="btn" href="./" data-i18n="page.thanks.back">Back to TinyNudge</a>
           <a class="btn btn-ghost" href="./mac.html">Mac app</a>
         </p>
       </article>

@@ -13,6 +13,10 @@
     subject.value = "Mac app help";
   }
 
+  function tn(key, fallback) {
+    return (window.TN && window.TN.t && window.TN.t(key)) || fallback;
+  }
+
   function show(kind, text) {
     status.className = "form-status " + kind;
     status.textContent = text;
@@ -21,13 +25,13 @@
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (form.querySelector('input[name="_honey"]:checked')) {
-      show("ok", "Message sent.");
+      show("ok", tn("page.contact.sent", "Message sent."));
       form.reset();
       return;
     }
 
     button.disabled = true;
-    show("pending", "Sending…");
+    show("pending", tn("page.contact.sending", "Sending…"));
 
     const payload = {
       name: form.name.value,
@@ -57,7 +61,10 @@
       if (/activat/i.test(msg)) {
         show(
           "warn",
-          "FormSubmit sent an activation email to the site inbox (often in Spam or Promotions). Open it and click Activate Form, then submit again. Until that link is clicked, messages are not delivered."
+          tn(
+            "page.contact.activate",
+            "FormSubmit sent an activation email to the site inbox (often in Spam or Promotions). Open it and click Activate Form, then submit again. Until that link is clicked, messages are not delivered."
+          )
         );
         return;
       }
@@ -67,11 +74,11 @@
         return;
       }
 
-      show("err", msg || "The form service did not accept the message. Wait a minute and try again.");
+      show("err", msg || tn("page.contact.fail", "The form service did not accept the message. Wait a minute and try again."));
     } catch (err) {
       show(
         "err",
-        "Could not reach the form service. Check your connection and try again."
+        tn("page.contact.net", "Could not reach the form service. Check your connection and try again.")
       );
     } finally {
       button.disabled = false;

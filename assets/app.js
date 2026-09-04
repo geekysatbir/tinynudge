@@ -151,13 +151,22 @@ function tick() {
   }
 }
 
+function tn(key, fallback) {
+  return (window.TN && window.TN.t && window.TN.t(key)) || fallback;
+}
+
+function refreshStartLabel() {
+  if (!startBtn) return;
+  startBtn.textContent = running ? tn("tool.stop", "Stop session") : tn("tool.start", "Keep screen awake");
+}
+
 async function startSession() {
   running = true;
   startedAt = Date.now();
   document.body.classList.add("is-on");
-  startBtn.textContent = "Stop session";
+  refreshStartLabel();
   startBtn.setAttribute("aria-pressed", "true");
-  document.title = "Screen awake — TinyNudge";
+  document.title = tn("tool.titleOn", "Screen awake — TinyNudge");
   tick();
   tickId = setInterval(tick, 250);
   await requestWake();
@@ -167,9 +176,9 @@ async function startSession() {
 async function stopSession() {
   running = false;
   document.body.classList.remove("is-on");
-  startBtn.textContent = "Keep screen awake";
+  refreshStartLabel();
   startBtn.setAttribute("aria-pressed", "false");
-  document.title = "TinyNudge | Online Mouse Jiggler for Screen Wake and Presence";
+  document.title = tn("meta.title", "TinyNudge | Online Mouse Jiggler for Screen Wake and Presence");
   clearInterval(tickId);
   try {
     await wakeLock?.release();
@@ -203,6 +212,7 @@ document.addEventListener("visibilitychange", async () => {
   }
 });
 
+document.addEventListener("tn:i18n", refreshStartLabel);
 window.addEventListener("resize", fitCanvas);
 fitCanvas();
 rafId = requestAnimationFrame(loop);
