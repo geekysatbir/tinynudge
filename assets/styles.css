@@ -457,9 +457,8 @@ input[type="time"] {
   max-width: 46rem;
 }
 
-.prose ul,
-.prose ol {
-  padding-left: 1.2rem;
+.prose .btn {
+  margin: 0 10px 10px 0;
 }
 
 .footer {
