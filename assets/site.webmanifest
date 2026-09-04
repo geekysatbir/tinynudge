@@ -1,0 +1,21 @@
+{
+  "name": "TinyNudge — Online Mouse Jiggler",
+  "short_name": "TinyNudge",
+  "description": "Free online mouse jiggler that keeps your screen awake. No install.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080C",
+  "theme_color": "#07080C",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
