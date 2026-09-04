@@ -6,7 +6,7 @@ window.TINY_NUDGE_DOWNLOAD_URL = "./downloads/TinyNudge.dmg";
 
   document.querySelectorAll("[data-buy-mac]").forEach(function (el) {
     el.href = url;
-    el.setAttribute("download", "TinyNudge.dmg");
+    el.removeAttribute("download");
     if (el.dataset.buyLabel !== "keep") el.textContent = "Download for Mac — free";
   });
 })();
