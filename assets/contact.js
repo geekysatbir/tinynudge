@@ -10,7 +10,7 @@
   const params = new URLSearchParams(window.location.search);
   const subject = document.getElementById("subject");
   if (subject && params.get("topic") === "mac") {
-    subject.value = "Mac app purchase";
+    subject.value = "Mac app help";
   }
 
   function show(kind, text) {

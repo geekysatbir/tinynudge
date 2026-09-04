@@ -1,16 +1,12 @@
-// Checkout URL for the Mac app. Leave empty to send buyers to the contact form.
-window.TINY_NUDGE_CHECKOUT_URL = "";
+// Direct download for the free Mac app.
+window.TINY_NUDGE_DOWNLOAD_URL = "./downloads/TinyNudge.dmg";
 
 (function () {
-  const checkout = (window.TINY_NUDGE_CHECKOUT_URL || "").trim();
-  const macForm = "./contact.html?topic=mac";
+  const url = (window.TINY_NUDGE_DOWNLOAD_URL || "").trim() || "./downloads/TinyNudge.dmg";
 
   document.querySelectorAll("[data-buy-mac]").forEach(function (el) {
-    if (checkout) {
-      el.href = checkout;
-      if (el.dataset.buyLabel !== "keep") el.textContent = "Subscribe — $2.99/year";
-    } else {
-      el.href = macForm;
-    }
+    el.href = url;
+    el.setAttribute("download", "TinyNudge.dmg");
+    if (el.dataset.buyLabel !== "keep") el.textContent = "Download for Mac — free";
   });
 })();
