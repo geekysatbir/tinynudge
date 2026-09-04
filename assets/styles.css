@@ -478,12 +478,90 @@ input[type="time"] {
   text-underline-offset: 0.18em;
 }
 
+.contact-hero {
+  padding-bottom: 12px;
+}
+
+.contact-hero p {
+  max-width: 42rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 56px;
+}
+
+.form-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+}
+
+.form-card label {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card select,
+.form-card textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.form-card textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.form-card .check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.form-card .check input {
+  margin-top: 4px;
+}
+
+.form-card .hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-card .btn {
+  justify-self: start;
+}
+
 @media (max-width: 860px) {
   .hero,
   .grid-2,
   .grid-3,
   .guides,
-  .steps {
+  .steps,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 

@@ -6,7 +6,7 @@
     <title>Contact — TinyNudge</title>
     <meta
       name="description"
-      content="Email Satbir about TinyNudge, the online mouse jiggler, or the Mac menu-bar app."
+      content="Contact TinyNudge about the online mouse jiggler or the Mac menu-bar app. We reply through the form — no public email address."
     />
     <link rel="canonical" href="https://mousejiggle.app/contact.html" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles.css?v=3" />
+    <link rel="stylesheet" href="./assets/styles.css?v=4" />
   </head>
   <body>
     <div class="wrap">
@@ -29,29 +29,72 @@
           <a href="./contact.html" aria-current="page">Contact</a>
         </nav>
       </header>
-      <article class="prose">
+
+      <section class="section contact-hero">
         <p class="eyebrow">Contact</p>
-        <h1>Email me</h1>
+        <h2>Get in touch</h2>
         <p>
-          Questions about the browser tool, the Mac app, or a purchase: write to
-          <a data-contact-email data-fill-email="true" href="./contact.html">satbir.taya84@gmail.com</a>.
+          Questions, feedback, or a Mac app order. Send the form and we will reply to the address
+          you enter. Do not include passwords or payment card numbers.
         </p>
-        <p>
-          <a class="btn" data-contact-email href="./contact.html">Open email</a>
-          <a class="btn btn-ghost" data-buy-mac href="./mac.html">Request the Mac app — $2.99/year</a>
-        </p>
-        <h2>What to include</h2>
-        <ul>
-          <li>Whether you need the free website tool explained, or TinyNudge for Mac.</li>
-          <li>Your macOS version if you want the disk image (13 Ventura or later).</li>
-          <li>Do not send passwords, work screenshots of private data, or payment card numbers.</li>
-        </ul>
-        <p>
-          There is no contact form on this site. Your mail app opens a message addressed to me. I
-          send the Mac disk image after payment — see
-          <a href="./mac.html">TinyNudge for Mac</a>.
-        </p>
-      </article>
+      </section>
+
+      <section class="contact-layout">
+        <aside class="card">
+          <h3>What we can help with</h3>
+          <p>The browser wake-lock tool, TinyNudge for Mac ($2.99/year), and install questions.</p>
+          <h3>Mac app orders</h3>
+          <p>
+            Choose “Mac app purchase” as the subject. After you pay, we send the disk image. Card
+            checkout on this site is not live yet.
+          </p>
+          <h3>Reply time</h3>
+          <p>We aim to answer within one or two days. There is no public inbox on this page.</p>
+        </aside>
+
+        <form id="contact-form" class="form-card" method="POST">
+          <input type="hidden" name="_next" value="https://mousejiggle.app/contact-thanks.html" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
+
+          <label>
+            Full name
+            <input id="name" name="name" type="text" required maxlength="120" autocomplete="name" />
+          </label>
+          <label>
+            Email address
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              maxlength="200"
+              autocomplete="email"
+            />
+          </label>
+          <label>
+            Subject
+            <select id="subject" name="subject" required>
+              <option value="">Select one</option>
+              <option value="Technical support">Technical support</option>
+              <option value="Mac app purchase">Mac app purchase</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea id="message" name="message" required maxlength="5000" rows="6"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="privacy" value="yes" required />
+            <span>I agree to the <a href="./privacy.html">privacy policy</a>.</span>
+          </label>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </section>
+
       <footer class="footer">
         <span>© 2026 TinyNudge</span>
         <span>
@@ -60,6 +103,6 @@
         </span>
       </footer>
     </div>
-    <script src="./assets/buy.js"></script>
+    <script src="./assets/contact.js"></script>
   </body>
 </html>
