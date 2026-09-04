@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online mouse jiggler — keep your screen awake in the browser | TinyNudge</title>
+    <meta
+      name="description"
+      content="Use a free online mouse jiggler with no install and no admin rights. TinyNudge keeps the display awake with Screen Wake Lock. It does not move your real mouse."
+    />
+    <link rel="canonical" href="https://mousejiggle.app/guides/online-mouse-jiggler.html" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <a class="brand" href="../">TinyNudge</a>
+        <nav class="nav-links">
+          <a href="./">Guides</a>
+          <a href="../">Browser tool</a>
+        </nav>
+      </header>
+      <article class="prose">
+        <p class="eyebrow">Guide</p>
+        <h1>Online mouse jiggler: keep the screen awake without installing software</h1>
+        <p>
+          An online mouse jiggler is a webpage that asks the browser to treat the session as active
+          enough to keep the monitor on. You do not download an <code>.exe</code> or a
+          <code>.dmg</code>. You do not need administrator rights. That is why people search for
+          “mouse jiggler online,” “mouse mover no install,” and “keep computer awake in browser.”
+        </p>
+        <p>
+          TinyNudge’s <a href="../">browser tool</a> uses the Screen Wake Lock API. If the lock is
+          denied or unsupported, it can fall back to a near-silent audio oscillator so some browsers
+          still treat the tab as media. Optional picture-in-picture keeps a tiny surface alive when
+          you switch tabs.
+        </p>
+        <h2>What it can do</h2>
+        <ul>
+          <li>Reduce display sleep while you read, present, or wait on a long download.</li>
+          <li>Run on Windows, macOS, Linux, and ChromeOS in a current desktop browser.</li>
+          <li>Stop on a clock you set, so a session does not run overnight by accident.</li>
+        </ul>
+        <h2>What it cannot do</h2>
+        <ul>
+          <li>Move the operating-system pointer. Web pages are not allowed to fake HID mice.</li>
+          <li>Reset idle in desktop Slack, Microsoft Teams, Zoom, or Discord by itself.</li>
+          <li>Override a closed MacBook lid. Clamshell sleep is a hardware policy.</li>
+        </ul>
+        <h2>How to use it</h2>
+        <ol>
+          <li>Open <a href="https://mousejiggle.app/">mousejiggle.app</a> in Chrome, Edge, Safari, or Firefox.</li>
+          <li>Select <strong>Keep screen awake</strong>. Confirm the wake-lock lamp if your browser shows a prompt.</li>
+          <li>Leave the window restored. If you must switch tabs, use the background PiP control.</li>
+        </ol>
+        <h2>Browser notes</h2>
+        <p>
+          Wake Lock is most consistent in Chromium (Chrome and Edge). Safari has supported it since
+          16.4. Firefox coverage has improved but still varies by version. If a corporate profile
+          blocks Wake Lock, the audio fallback may still help the panel stay on, or it may not —
+          power policy can win.
+        </p>
+        <p>
+          For a real mouse nudge on a Mac, see
+          <a href="./mouse-jiggler-for-mac.html">mouse jiggler for Mac</a>. For presence in chat
+          apps, see
+          <a href="./keep-slack-teams-status-green.html">keeping Slack or Teams available</a>.
+        </p>
+        <p><a href="./">← All guides</a></p>
+      </article>
+      <footer class="footer">
+        <span>© 2026 TinyNudge</span>
+        <a href="../">Open the online mouse jiggler</a>
+      </footer>
+    </div>
+  </body>
+</html>

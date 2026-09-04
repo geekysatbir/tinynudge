@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keep Slack and Microsoft Teams from going Away | TinyNudge</title>
+    <meta
+      name="description"
+      content="Why Slack, Microsoft Teams, and Zoom go idle, why a browser mouse jiggler may not keep you green, and when a Mac mouse jiggler or USB mover is required."
+    />
+    <link rel="canonical" href="https://mousejiggle.app/guides/keep-slack-teams-status-green.html" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <a class="brand" href="../">TinyNudge</a>
+        <nav class="nav-links">
+          <a href="./">Guides</a>
+          <a href="../">Browser tool</a>
+        </nav>
+      </header>
+      <article class="prose">
+        <p class="eyebrow">Guide</p>
+        <h1>Keep Slack or Microsoft Teams from going Away</h1>
+        <p>
+          Searches like “keep Slack green,” “Microsoft Teams status active,” and “stop Zoom idle”
+          are the most common reason people want a mouse jiggler. Presence is not the same as a
+          bright screen. Mixing the two is how websites over-promise.
+        </p>
+        <h2>How desktop chat decides you are idle</h2>
+        <p>
+          Slack, Microsoft Teams, Zoom, Webex, and Discord on the desktop typically ask the
+          operating system whether there has been recent keyboard or mouse activity. They do not
+          ask whether a browser tab holds a Screen Wake Lock. A YouTube video can keep the panel
+          on and still leave Teams showing Away.
+        </p>
+        <p>
+          Web versions of those apps sometimes use a different clock (tab visibility, activity
+          inside the page). Even then, a second tab with a mouse jiggler does not equal typing in
+          the chat tab. Treat “undetectable green status from any website” as marketing, not a
+          platform guarantee.
+        </p>
+        <h2>What TinyNudge’s website does</h2>
+        <p>
+          The <a href="../">online mouse jiggler</a> keeps the <em>display</em> awake. That helps
+          when you are reading, presenting, or watching a long training video and you do not want
+          the panel to dim. It does not synthesize the input events desktop Slack and Teams use
+          for Available.
+        </p>
+        <h2>What actually resets idle on a Mac</h2>
+        <p>
+          You need something the OS counts as pointer or key activity: moving the mouse yourself,
+          a USB mouse jiggler, or a signed app that is allowed to nudge the cursor.
+          <a href="./mouse-jiggler-for-mac.html">TinyNudge for Mac</a> does a small real offset on
+          a timer. Accessibility permission is required because macOS treats programmatic cursor
+          movement as a privileged action.
+        </p>
+        <h2>Workplace policy</h2>
+        <p>
+          Presence indicators are a poor substitute for agreed working hours, but they are still
+          part of many teams’ culture. If your organization forbids idle-prevention tools, do not
+          use one. TinyNudge will not help you hide from endpoint agents, DLP, or timekeeping
+          software, and it is not intended for that.
+        </p>
+        <h2>Practical checklist</h2>
+        <ul>
+          <li>Need the monitor on while you read? Use the browser tool.</li>
+          <li>Need desktop Slack or Teams to stay Available on a Mac? Use the menu-bar app or a USB jiggler, if policy allows.</li>
+          <li>On a locked-down Windows PC with no install rights? A USB HID jiggler is the usual path — still check IT first.</li>
+        </ul>
+        <p><a href="./">← All guides</a></p>
+      </article>
+      <footer class="footer">
+        <span>© 2026 TinyNudge</span>
+        <a href="../#mac">Mac app</a>
+      </footer>
+    </div>
+  </body>
+</html>

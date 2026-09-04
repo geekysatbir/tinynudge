@@ -9,22 +9,24 @@
     <meta property="og:image" content="https://mousejiggle.app/assets/og.png" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./assets/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap">
       <header class="nav">
         <a class="brand" href="./">TinyNudge</a>
+        <nav class="nav-links">
+          <a href="./guides/">Guides</a>
+        </nav>
       </header>
-      <section class="section">
-        <h2>Privacy policy</h2>
+      <article class="prose">
+        <h1>Privacy policy</h1>
         <p>
           TinyNudge’s online mouse jiggler runs in your browser using the Screen Wake Lock API,
           optional silent audio, and optional Picture-in-Picture. Session state never leaves your
@@ -38,11 +40,15 @@
           monitoring or security software.
         </p>
         <p>
-          This site does not use accounts, contact forms, or a public source-code link. The Mac
-          app is distributed separately when checkout is available.
+          This site does not use accounts or contact forms. The Mac app is distributed separately
+          when checkout is available.
         </p>
         <p><a href="./">← Back to TinyNudge</a></p>
-      </section>
+      </article>
+      <footer class="footer">
+        <span>© 2026 TinyNudge</span>
+        <a href="./guides/">Guides</a>
+      </footer>
     </div>
   </body>
 </html>

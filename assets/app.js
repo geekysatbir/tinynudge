@@ -38,12 +38,12 @@ function drawCursor(t) {
   const x = w * 0.5 + Math.sin(phase * Math.PI * 2) * (w * 0.28);
   const y = h * 0.52 + Math.sin(phase * Math.PI * 4) * (h * 0.18);
 
-  ctx.fillStyle = "rgba(92,255,193,0.07)";
+  ctx.fillStyle = "rgba(30,58,95,0.08)";
   ctx.beginPath();
   ctx.ellipse(w / 2, h * 0.78, w * 0.28, 10, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  ctx.fillStyle = "#5cffc1";
+  ctx.fillStyle = "#1e3a5f";
   ctx.beginPath();
   ctx.moveTo(x, y - 14);
   ctx.lineTo(x + 12, y + 10);
@@ -155,9 +155,9 @@ async function startSession() {
   running = true;
   startedAt = Date.now();
   document.body.classList.add("is-on");
-  startBtn.textContent = "ON";
+  startBtn.textContent = "Stop session";
   startBtn.setAttribute("aria-pressed", "true");
-  document.title = "Session Active — TinyNudge";
+  document.title = "Screen awake — TinyNudge";
   tick();
   tickId = setInterval(tick, 250);
   await requestWake();
@@ -167,9 +167,9 @@ async function startSession() {
 async function stopSession() {
   running = false;
   document.body.classList.remove("is-on");
-  startBtn.textContent = "START";
+  startBtn.textContent = "Keep screen awake";
   startBtn.setAttribute("aria-pressed", "false");
-  document.title = "TinyNudge — Free Online Mouse Jiggler (Keep Screen Awake)";
+  document.title = "TinyNudge | Online Mouse Jiggler for Screen Wake and Presence";
   clearInterval(tickId);
   try {
     await wakeLock?.release();

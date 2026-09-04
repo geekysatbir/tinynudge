@@ -4,8 +4,8 @@
   "description": "Free online mouse jiggler that keeps your screen awake. No install.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#07080C",
-  "theme_color": "#07080C",
+  "background_color": "#f4f1ea",
+  "theme_color": "#1e3a5f",
   "icons": [
     {
       "src": "/assets/favicon.svg",
